@@ -1,0 +1,57 @@
+<?php
+/**
+ * Orange Cat
+ * Copyright (C) 2018 Orange Cat
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see http://opensource.org/licenses/gpl-3.0.html
+ *
+ * @category Orangecat
+ * @package Orangecat_WhatsAppButton
+ * @copyright Copyright (c) 2018 Orange Cat
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Oliverio Gombert <olivertar@gmail.com>
+ */
+?>
+
+<?php
+$helper = $this->helper('Orangecat\WhatsAppButton\Helper\Data');
+$helperDevice = $this->helper('Orangecat\Base\Helper\Device');
+
+if($helperDevice->isMobile() && $helper->isEnabled() && $helper->canShow()):
+    
+    $message = trim($helper->getMessage());
+    $phone = trim($helper->getTelephone());
+    $pulse = $helper->getPulse();    
+    $image = $helper->getImage();
+    $size = $helper->getSize();
+    $css = $helper->getCss();
+
+?>
+
+    <div class="wrapper-whatsappbutton <?php if($pulse == 1):?>whatsappbutton-pulse<?php endif;?> <?php echo $css['class'];?>" <?php echo $css['style'];?>>
+    	<a href="https://web.whatsapp.com/send?phone=<?php echo $phone; ?>&amp;text=<?php echo $message; ?>" onclick="gtag('event', 'WhatsApp', {'event_action': 'whatsapp_chat', 'event_category': 'Chat', 'event_label': 'Orangecat_WhatsAppButton'});" target="_blank">
+    		<?php if($image == 1):?>
+    		<img style="width: <?php echo $size['width'];?>px; height <?php echo $size['height'];?>px;" src="<?php echo $this->getViewFileUrl('Orangecat_WhatsAppButton::images/whatsapp_ico_1.svg'); ?>" alt="<?php echo __('Send Message')?>"/>
+    		<?php elseif($image == 2):?>
+    		<img style="width: <?php echo $size['width'];?>px; height <?php echo $size['height'];?>px;" src="<?php echo $this->getViewFileUrl('Orangecat_WhatsAppButton::images/whatsapp_ico_2.svg'); ?>" alt="<?php echo __('Send Message')?>"/>
+    		<?php elseif($image == 3):?>
+    		<img style="width: <?php echo $size['width'];?>px; height <?php echo $size['height'];?>px;" src="<?php echo $this->getViewFileUrl('Orangecat_WhatsAppButton::images/whatsapp_ico_custom.png'); ?>" alt="<?php echo __('Send Message')?>"/>
+    		<?php endif;?>
+    	</a>
+    </div>
+
+<?php endif; ?>
+
