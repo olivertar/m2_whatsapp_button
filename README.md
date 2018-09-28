@@ -35,5 +35,8 @@ Si encuentras util este modulo, considera hacer una donacion
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BJGDM4EZMETKQ)
 
 ## Screenshot
+Backend
 ![ScreenShot](https://github.com/olivertar/m2_whatsapp_button/blob/master/screen-shot/whatsappbutton_backend.png)
+
+Frontend
 ![ScreenShot](https://github.com/olivertar/m2_whatsapp_button/blob/master/screen-shot/whatsappbutton_frontend.png)
