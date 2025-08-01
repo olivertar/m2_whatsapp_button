@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <whatsappbutton>
+            <general>
+                <enabled>0</enabled>
+                <telephone></telephone>
+                <message>Hi, I want to ask a question</message>
+            </general>
+
+            <where>
+                <all>0</all>
+                <home>1</home>
+                <cms>1</cms>
+                <product>1</product>
+                <category>1</category>
+                <search>1</search>
+                <contact>1</contact>
+            </where>
+
+            <icon>
+                <pulse>1</pulse>
+                <width>60</width>
+                <height>60</height>
+                <image>1</image>
+            </icon>
+            <position>
+                <area>bottom-right</area>
+                <xdistance>10</xdistance>
+                <ydistance>10</ydistance>
+            </position>
+        </whatsappbutton>
+    </default>
+</config>

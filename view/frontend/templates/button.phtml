@@ -1,0 +1,35 @@
+<?php
+$helper = $this->helper('Orangecat\WhatsAppButton\Helper\Data');
+if ($helper->isEnabled() && $helper->canShow()):
+
+    $message = trim($helper->getMessage());
+    $phone = trim($helper->getTelephone());
+    $pulse = $helper->getPulse();
+    $image = $helper->getImage();
+    $size = $helper->getSize();
+    $css = $helper->getCss();
+
+    ?>
+
+    <div class="wrapper-whatsappbutton <?php if ($pulse == 1): ?>whatsappbutton-pulse<?php endif; ?> <?php echo $css['class']; ?>" <?php echo $css['style']; ?>>
+        <a href="https://web.whatsapp.com/send?phone=<?php echo $phone; ?>&amp;text=<?php echo $message; ?>"
+           onclick="gtag('event', 'WhatsApp', {'event_action': 'whatsapp_chat', 'event_category': 'Chat', 'event_label': 'Orangecat_WhatsAppButton'});"
+           target="_blank">
+            <?php if ($image == 1): ?>
+                <img style="width: <?php echo $size['width']; ?>px; height <?php echo $size['height']; ?>px;"
+                     src="<?php echo $this->getViewFileUrl('Orangecat_WhatsAppButton::images/whatsapp_ico_1.svg'); ?>"
+                     alt="<?php echo __('Send Message') ?>"/>
+            <?php elseif ($image == 2): ?>
+                <img style="width: <?php echo $size['width']; ?>px; height <?php echo $size['height']; ?>px;"
+                     src="<?php echo $this->getViewFileUrl('Orangecat_WhatsAppButton::images/whatsapp_ico_2.svg'); ?>"
+                     alt="<?php echo __('Send Message') ?>"/>
+            <?php elseif ($image == 3): ?>
+                <img style="width: <?php echo $size['width']; ?>px; height <?php echo $size['height']; ?>px;"
+                     src="<?php echo $this->getViewFileUrl('Orangecat_WhatsAppButton::images/whatsapp_ico_custom.png'); ?>"
+                     alt="<?php echo __('Send Message') ?>"/>
+            <?php endif; ?>
+        </a>
+    </div>
+
+<?php endif; ?>
+

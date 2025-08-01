@@ -1,0 +1,18 @@
+{
+    "name": "orangecat/whatsapp",
+    "description": "Module that allows users to communicate with you through whatsapp from your site",
+    "require": {
+        "php": "^7.4 || ^8.1",
+        "magento/framework": "*"
+    },
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Orangecat\\WhatsAppButton\\": ""
+        }
+    }
+}
