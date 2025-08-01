@@ -2,7 +2,6 @@
 
 namespace Orangecat\WhatsAppButton\Helper;
 
-use Detection\MobileDetect;
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\App\Request\Http;
@@ -14,7 +13,6 @@ class Data extends AbstractHelper
 
     public function __construct(
         Http   $request,
-        MobileDetect               $mobileDetector,
         Context $context
     )
     {
