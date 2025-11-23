@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Orangecat. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Orangecat_WhatsAppButton" setup_version="1.0.1">
+    <module name="Orangecat_WhatsAppButton" setup_version="1.0.2">
         <sequence>
-            <module name="Orangecat_Base"/>
+            <module name="Orangecat_Core"/>
         </sequence>
     </module>
 </config>

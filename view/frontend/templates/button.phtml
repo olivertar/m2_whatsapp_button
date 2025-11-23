@@ -1,5 +1,11 @@
 <?php
+/**
+ * Copyright © Orangecat. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
 $helper = $this->helper('Orangecat\WhatsAppButton\Helper\Data');
+
 if ($helper->isEnabled() && $helper->canShow()):
 
     $message = trim($helper->getMessage());

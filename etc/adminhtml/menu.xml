@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Orangecat. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Orangecat_WhatsAppButton::whatsappbuton"
+             title="WhatsApp Button"
+             module="Orangecat_WhatsAppButton"
+             sortOrder="750"
+             resource="Orangecat_WhatsAppButton::whatsappbuton"
+             parent="Orangecat_Core::menu"/>
+        <add id="Orangecat_WhatsAppButton::config_core"
+             title="Configuration"
+             module="Orangecat_WhatsAppButton"
+             sortOrder="1000"
+             action="adminhtml/system_config/edit/section/whatsappbutton"
+             resource="Orangecat_WhatsAppButton::config"
+             parent="Orangecat_WhatsAppButton::whatsappbuton"/>
+    </menu>
+</config>
